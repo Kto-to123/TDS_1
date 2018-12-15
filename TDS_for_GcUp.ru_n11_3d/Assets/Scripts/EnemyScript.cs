@@ -39,5 +39,10 @@ public class EnemyScript : MonoBehaviour {
         {
             HP -= 20;
         }
+
+        if (other.tag == "Weapons")
+        {
+            HP -= 100;
+        }
     }
 }

@@ -8,6 +8,7 @@ TagManager:
   - Scenery
   - Enemy
   - UI
+  - Weapons
   layers:
   - Default
   - TransparentFX

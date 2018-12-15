@@ -19,7 +19,7 @@ public class Menu : MonoBehaviour {
 
     public void MainMenuStart()
     {
-        Debug.Log("OK");
+        //Debug.Log("OK");
         SceneManager.LoadScene("StartScene");
     }
 }
