@@ -24,7 +24,7 @@ public class BulletScript : MonoBehaviour {
     {
         if (collision.tag == "Enemy" || collision.tag == "Scenery")
         {
-            Debug.Log("Box went through!");
+            //Debug.Log("Box went through!");
             Destroy(this.gameObject, 0.02f);
         }
     }
