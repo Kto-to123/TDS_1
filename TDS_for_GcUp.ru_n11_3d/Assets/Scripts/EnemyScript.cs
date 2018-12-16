@@ -7,6 +7,7 @@ public class EnemyScript : MonoBehaviour {
 
     public int HP = 100;
 
+    int weaponsDamage;
     NavMeshAgent nav;
     Transform player;
     GameObject UI;
@@ -22,6 +23,19 @@ public class EnemyScript : MonoBehaviour {
         //playerHealth = player.GetComponent<PlayerHealth>();
         //enemyHealth = GetComponent<EnemyHealth>();
         nav = GetComponent<NavMeshAgent>();
+
+        if (RoomManager.Inst.Weapon == 1)
+        {
+            weaponsDamage = 40;
+        }
+        else if (RoomManager.Inst.Weapon == 3)
+        {
+            weaponsDamage = 100;
+        }
+        else
+        {
+            weaponsDamage = 60;
+        }
     }
 	
 	void Update () {
@@ -42,7 +56,7 @@ public class EnemyScript : MonoBehaviour {
 
         if (other.tag == "Weapons")
         {
-            HP -= 100;
+            HP -= weaponsDamage;
         }
     }
 }
