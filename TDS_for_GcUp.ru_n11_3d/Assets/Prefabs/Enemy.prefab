@@ -198,8 +198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9192e04e219dfe946b8b953e7320d3d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttacks: 0.5
-  attackDamage: 10
+  timeBetweenAttacks: 1
+  attackDamage: 5
 --- !u!135 &135897493660354092
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -210,8 +210,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.8
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!136 &136132336463002876
 CapsuleCollider:
   m_ObjectHideFlags: 1

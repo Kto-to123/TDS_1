@@ -26,26 +26,29 @@ public class EnemyScript : MonoBehaviour {
 
         if (RoomManager.Inst.Weapon == 1)
         {
-            weaponsDamage = 40;
+            weaponsDamage = 60;
         }
         else if (RoomManager.Inst.Weapon == 3)
         {
-            weaponsDamage = 100;
+            weaponsDamage = 101;
         }
         else
         {
-            weaponsDamage = 60;
+            weaponsDamage = 100;
         }
     }
 	
 	void Update () {
         nav.SetDestination(player.position);
         if (HP <= 0)
-        {
-            uiScript.KillEnemy();
-            Destroy(this.gameObject);
-        } 
+            Death();
 	}
+
+    void Death()
+    {
+        uiScript.KillEnemy();
+        Destroy(this.gameObject);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -57,6 +60,8 @@ public class EnemyScript : MonoBehaviour {
         if (other.tag == "Weapons")
         {
             HP -= weaponsDamage;
+            if (weaponsDamage > 100)
+                Death();
         }
     }
 }

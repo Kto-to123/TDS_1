@@ -5,21 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour {
 
-    public bool activMenu = false;
-    public GameObject menu;
+ //   public bool activMenu = false;
+ //   public GameObject menu;
 
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            activMenu = !activMenu;
-            menu.SetActive(activMenu);
+	//void Update () {
+ //       if (Input.GetKeyDown(KeyCode.Escape))
+ //       {
+ //           activMenu = !activMenu;
+ //           menu.SetActive(activMenu);
+ //       }
+ //   }
 
-        }
-    }
+ //   public void MainMenuStart()
+ //   {
+ //       //Debug.Log("OK");
+ //       SceneManager.LoadScene("StartScene");
+ //   }
 
-    public void MainMenuStart()
-    {
-        //Debug.Log("OK");
-        SceneManager.LoadScene("StartScene");
-    }
+ //   public void ActiveMenu()
+ //   {
+ //       menu.SetActive(true);
+ //   }
 }

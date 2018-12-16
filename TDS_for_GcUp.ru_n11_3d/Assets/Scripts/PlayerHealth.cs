@@ -12,13 +12,16 @@ public class PlayerHealth : MonoBehaviour
     public float flashSpeed = 5f;                               // The speed the damageImage will fade at.
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     // The colour the damageImage is set to, to flash.
 
-
     Animator anim;                                              // Reference to the Animator component.
     AudioSource playerAudio;                                    // Reference to the AudioSource component.
     PlayerMovement playerMovement;                              // Reference to the player's movement.
     PlayerShooting playerShooting;                              // Reference to the PlayerShooting script.
     bool isDead;                                                // Whether the player is dead.
     bool damaged;                                               // True when the player gets damaged.
+
+    PlayerShooting2 playerShooting2;
+    GameObject MyUI;
+    UIScript MyUIScript;
 
 
     void Awake()
@@ -28,9 +31,13 @@ public class PlayerHealth : MonoBehaviour
         playerAudio = GetComponent<AudioSource>();
         playerMovement = GetComponent<PlayerMovement>();
         playerShooting = GetComponentInChildren<PlayerShooting>();
+        playerShooting2 = GetComponentInChildren<PlayerShooting2>();
 
         // Set the initial health of the player.
         currentHealth = startingHealth;
+
+        MyUI = GameObject.FindGameObjectWithTag("UI");
+        MyUIScript = MyUI.GetComponent<UIScript>();
     }
 
 
@@ -76,6 +83,14 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "EnemyBullet")
+        {
+            TakeDamage(5);
+        }
+    }
+
 
     void Death()
     {
@@ -93,7 +108,9 @@ public class PlayerHealth : MonoBehaviour
         //playerAudio.Play();
 
         // Turn off the movement and shooting scripts.
-        //playerMovement.enabled = false;
+        playerMovement.enabled = false;
         //playerShooting.enabled = false;
+        playerShooting2.enabled = false;
+        MyUIScript.ActiveMenu();
     }
 }

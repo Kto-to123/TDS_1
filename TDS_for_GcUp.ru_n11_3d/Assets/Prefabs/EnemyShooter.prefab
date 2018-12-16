@@ -102,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1752541704892302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.08, y: 1.045, z: 1.23}
+  m_LocalPosition: {x: 0.08, y: 0.918, z: 1.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4082958708701564}
@@ -115,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1251176407832896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.22, y: 1.28, z: 1.87}
+  m_LocalPosition: {x: -19.973438, y: -2.32, z: 0.8920311}
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_Children:
   - {fileID: 4334180543588428}
@@ -232,8 +232,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9192e04e219dfe946b8b953e7320d3d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttacks: 0.5
-  attackDamage: 10
+  timeBetweenAttacks: 1
+  attackDamage: 5
 --- !u!114 &114907428102167908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -256,8 +256,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.8
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!136 &136215515116303284
 CapsuleCollider:
   m_ObjectHideFlags: 1
