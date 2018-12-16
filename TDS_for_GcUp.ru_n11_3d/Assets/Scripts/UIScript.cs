@@ -13,5 +13,7 @@ public class UIScript : MonoBehaviour {
     {
         kils++;
         KilsText.text = kils.ToString();
+        RoomManager.Inst.XP += 200;
+        RoomManager.Inst.OllKills += 1;
     }
 }

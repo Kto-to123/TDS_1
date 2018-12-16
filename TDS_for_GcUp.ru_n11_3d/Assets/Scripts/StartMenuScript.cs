@@ -2,13 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class StartMenuScript : MonoBehaviour {
 
     public GameObject ShopMenu;
     public GameObject MainMenu;
+    public Text kills;
+    public Text XP;
 
-	public void LVL1Start()
+
+    private void Start()
+    {
+        kills.text = "Kills: " + RoomManager.Inst.OllKills.ToString();
+        XP.text = "XP: " + RoomManager.Inst.XP.ToString();
+    }
+
+
+    public void LVL1Start()
     {
         SceneManager.LoadScene("1");
     }
