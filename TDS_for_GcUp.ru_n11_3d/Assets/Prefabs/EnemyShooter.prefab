@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  shootingRange: 5
+  shootingRange: 10
   player: {fileID: 1809984727011010, guid: 92285357ab0bd65438e002b362cc0d69, type: 2}
   bullet: {fileID: 1999945755175566, guid: abd851cea1da9f24fa3a1d2a2662dc7c, type: 2}
   point: {fileID: 1752541704892302}
