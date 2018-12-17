@@ -6,9 +6,10 @@ public class EnemyShootingScript : MonoBehaviour {
 
     public float speed = 3.0f;
     public float shootingRange = 10.0f;
-    public Transform player;
+    Transform player;
     public GameObject bullet;
-    public GameObject point;
+    public GameObject point1;
+    public GameObject point2;
 
     bool weaponsRepiad = true;
 
@@ -24,7 +25,8 @@ public class EnemyShootingScript : MonoBehaviour {
         float dist = Vector3.Distance(player.position, transform.position);
         if (dist < shootingRange && weaponsRepiad)
         {
-            Instantiate(bullet, new Vector3(point.transform.position.x, point.transform.position.y, point.transform.position.z), transform.rotation);
+            Instantiate(bullet, new Vector3(point1.transform.position.x, point1.transform.position.y, point1.transform.position.z), transform.rotation);
+            Instantiate(bullet, new Vector3(point2.transform.position.x, point2.transform.position.y, point2.transform.position.z), transform.rotation);
             //Debug.Log(dist);
             weaponsRepiad = false;
             StartCoroutine("Repied");

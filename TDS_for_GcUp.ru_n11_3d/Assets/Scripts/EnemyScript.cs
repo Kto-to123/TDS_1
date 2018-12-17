@@ -12,6 +12,7 @@ public class EnemyScript : MonoBehaviour {
     Transform player;
     GameObject UI;
     UIScript uiScript;
+    public GameObject mi;
 
 
     void Awake()
@@ -47,7 +48,7 @@ public class EnemyScript : MonoBehaviour {
     void Death()
     {
         uiScript.KillEnemy();
-        Destroy(this.gameObject);
+        Destroy(mi);
     }
 
     private void OnTriggerEnter(Collider other)
