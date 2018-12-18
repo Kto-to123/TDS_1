@@ -69,7 +69,7 @@ public class Spawner : MonoBehaviour {
                     Instantiate(enemyLVL1, new Vector3(point.transform.position.x + (i * 2), point.transform.position.y, point.transform.position.z), transform.rotation);
                 }
             }
-            Debug.Log(MyUIScript.kils.ToString());
+            //Debug.Log(MyUIScript.kils.ToString());
         }
     }
 }
