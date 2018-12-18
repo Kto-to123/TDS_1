@@ -10,10 +10,11 @@ public class UIScript : MonoBehaviour {
     public GameObject menu;
     public Text KilsText;
     public Text HilthText;
+    public Text Magazin;
 
     GameObject player;
     PlayerHealth PlayerHealth;
-    int kils = 0;
+    public int kils = 0;
 
     private void Start()
     {
@@ -55,5 +56,10 @@ public class UIScript : MonoBehaviour {
     public void ActiveMenu()
     {
         menu.SetActive(true);
+    }
+
+    public void MagazineSet(int mag)
+    {
+        Magazin.text = mag.ToString();
     }
 }

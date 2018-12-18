@@ -10,6 +10,9 @@ public class PlayerShooting2 : MonoBehaviour {
     public GameObject Weapons2;
     public GameObject Weapons3;
 
+    GameObject UI;
+    UIScript uiScript;
+
     GameObject Weapons;
     int repied = 2;
     bool weaponsRepiad = true;
@@ -29,6 +32,11 @@ public class PlayerShooting2 : MonoBehaviour {
         {
             Weapons = Weapons2;
         }
+
+        UI = GameObject.FindGameObjectWithTag("UI");
+        uiScript = UI.GetComponent<UIScript>();
+
+        uiScript.MagazineSet(repied);
     }
 
     void Update () {
@@ -46,6 +54,8 @@ public class PlayerShooting2 : MonoBehaviour {
             {
                 StartCoroutine("Repied");
             }
+
+            uiScript.MagazineSet(repied);
         }
 
         if (Input.GetMouseButtonDown(1) && weaponsRepiad)
@@ -73,5 +83,6 @@ public class PlayerShooting2 : MonoBehaviour {
     {
         yield return new WaitForSeconds(2f);
         repied = 2;
+        uiScript.MagazineSet(repied);
     }
 }

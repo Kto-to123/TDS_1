@@ -10,12 +10,19 @@ public class EnemyShootingScript : MonoBehaviour {
     public GameObject bullet;
     public GameObject point1;
     public GameObject point2;
+    public int LVL = 1;
 
+    float repiad;
     bool weaponsRepiad = true;
 
     void Start ()
     {
-		
+        if (LVL == 1)
+            repiad = 1f;
+        else if (LVL == 2)
+            repiad = 0.5f;
+        else if (LVL == 3)
+            repiad = 0.15f;
 	}
 	
 
@@ -43,7 +50,7 @@ public class EnemyShootingScript : MonoBehaviour {
 
     IEnumerator Repied()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(repiad);
         weaponsRepiad = true;
     }
 }
